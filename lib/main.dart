@@ -1,4 +1,4 @@
-import 'package:dotsin_assignment/screens/home_screen.dart';
+import 'package:dotsin_assignment/screens/phenotype_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
