@@ -11,9 +11,15 @@ import 'package:dotsin_assignment/widgets/neurotransmitter_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class PhenotypeScreen extends StatelessWidget {
+class PhenotypeScreen extends StatefulWidget {
   const PhenotypeScreen({super.key});
 
+  @override
+  State<PhenotypeScreen> createState() => _PhenotypeScreenState();
+}
+
+class _PhenotypeScreenState extends State<PhenotypeScreen> {
+  String selectedOrgan = 'Heart';
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -50,7 +56,14 @@ class PhenotypeScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
                 sliver: SliverList(
                   delegate: SliverChildListDelegate([
-                    const Header(),
+                    Header(
+                      selectedOrgan: selectedOrgan,
+                      onOrganSelected: (organ) {
+                        setState(() {
+                          selectedOrgan = organ;
+                        });
+                      },
+                    ),
                     const SizedBox(height: 18),
                     const ModeSwitcher(),
                     const SizedBox(height: 24),
