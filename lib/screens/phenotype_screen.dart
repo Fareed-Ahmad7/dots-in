@@ -19,7 +19,7 @@ class PhenotypeScreen extends StatefulWidget {
 }
 
 class _PhenotypeScreenState extends State<PhenotypeScreen> {
-  String selectedOrgan = 'Heart';
+  String selectedOrgan = '';
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -67,7 +67,7 @@ class _PhenotypeScreenState extends State<PhenotypeScreen> {
                     const SizedBox(height: 18),
                     const ModeSwitcher(),
                     const SizedBox(height: 24),
-                    const HealthOverview(),
+                    HealthOverview(selectedOrgan),
                     const SizedBox(height: 18),
                     const NeurotransmitterSwitcher(),
                     const SizedBox(height: 20),
